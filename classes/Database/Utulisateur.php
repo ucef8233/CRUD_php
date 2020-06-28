@@ -37,7 +37,7 @@ class Utulisateur extends Db
     endforeach;
     $stmtExec = $stmt->execute();
     if ($stmtExec) :
-      header('Location:../index.php?');
+      header('Location:index.php?');
     endif;
   }
 
@@ -71,7 +71,7 @@ class Utulisateur extends Db
     endforeach;
     $stmtExec = $stmt->execute();
     if ($stmtExec) :
-      header('Location:../index.php');
+      header('Location:index.php');
     endif;
   }
   /**
