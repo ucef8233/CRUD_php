@@ -1,5 +1,10 @@
 <?php
 // function autoload classes //
+
+use \projet\HTML\Form;
+use \projet\Autoloader;
+use \projet\Database\Functions;
+
 require 'classes/Autoloader.php';
 Autoloader::register();
 Functions::submit();
@@ -24,23 +29,12 @@ Functions::submit();
           <h4 class="mb-4">Add User</h4>
           <!-- ajouter des employer  -->
           <form action="" method="POST">
-            <div class="form-group">
-              <label for="nom">Nom</label>
-              <input type="text" class="form-control" name="nom" aria-describedby="emailHelp" placeholder="Entrer le nom" required>
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" name="password" class="form-control" placeholder="Entrer le mot de pass" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Mail</label>
-              <input type="email" name="email" class="form-control" placeholder="Entrer le mail" required>
-            </div>
-            <div class="form-group">
-              <label for="adress">adress postal</label>
-              <input type="text" name="adress" class="form-control" placeholder="Entrer l'adress postale">
-            </div>
-            <input type="submit" name="submit" class="btn btn-primary">
+            <?php
+            foreach (Form::addForm() as list($a, $b, $c)) :
+              echo  Form::getForm($a, $b, $c);
+            endforeach;
+            ?>
+            <?= Form::getInput('submit', 'submit', 'submit') ?>
           </form>
           <!-- fin d'ajout des employées  -->
         </div>

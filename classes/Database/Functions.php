@@ -1,4 +1,7 @@
 <?php
+
+namespace projet\Database;
+
 class Functions
 {
   // fonction d'ajout d'utulisateur'
@@ -15,7 +18,6 @@ class Functions
         'mail' => $email,
         'adress' => $adress
       ];
-
       $utulisateurs = new Utulisateur;
       $utulisateurs->insert($champs);
     endif;
@@ -55,4 +57,5 @@ class Functions
     endif;
     return $result;
   }
+ 
 }

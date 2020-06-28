@@ -1,4 +1,9 @@
 <?php
+
+
+use projet\Database\Utulisateur;
+use projet\Autoloader;
+use projet\Database\Functions;
 // function autoload classes //
 require 'classes/Autoloader.php';
 Autoloader::register();

@@ -1,5 +1,11 @@
 <?php
-class Db
+
+namespace projet\Database;
+
+use \PDO;
+use \PDOException;
+
+class   Db
 // connexion a la base de donnée
 {
   /**

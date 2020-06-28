@@ -1,4 +1,10 @@
 <?php
+
+namespace projet\Database;
+
+use projet;
+use \PDO;
+
 class Utulisateur extends Db
 // recuperation de tout les utulisateur de la base de donnée
 {
@@ -31,7 +37,7 @@ class Utulisateur extends Db
     endforeach;
     $stmtExec = $stmt->execute();
     if ($stmtExec) :
-      header('Location: index.php');
+      header('Location: index.php?');
     endif;
   }
 

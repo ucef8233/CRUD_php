@@ -1,5 +1,7 @@
 <?php
 
+namespace projet;
+
 /**
  * Class Autoloader
  */
@@ -20,6 +22,10 @@ class Autoloader
    */
   static function autoload($class)
   {
-    require 'classes/' . $class . '.php';
+    if (strpos($class, __NAMESPACE__ . '\\') === 0) :
+      $class = str_replace(__NAMESPACE__ . '\\', '', $class);
+      $class = str_replace('\\', '/', $class);
+      require 'classes/' . $class . '.php';
+    endif;
   }
 }

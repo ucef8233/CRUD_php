@@ -1,4 +1,8 @@
 <?php
+
+use \projet\HTML\Form;
+use \projet\Autoloader;
+use \projet\Database\Functions;
 // function autoload classes //
 require 'classes/Autoloader.php';
 Autoloader::register();
@@ -23,24 +27,14 @@ $result = Functions::edit();
           <h4 class="mb-4">Edit User</h4>
           <!-- Modiffier des employer  -->
           <form action="" method="post">
-            <input type="hidden" name="id" value="<?= $result['id'] ?>">
-            <div class="form-group">
-              <label for="nom">Nom</label>
-              <input type="text" class="form-control" name="nom" aria-describedby="emailHelp" placeholder="Entrer le nom" value="<?= $result['nom'] ?>" required>
-            </div>
-            <!-- <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" name="password" class="form-control" placeholder="Entrer le mot de pass" value="<?= $result['password'] ?>" required>
-            </div> -->
-            <div class="form-group">
-              <label for="email">Mail</label>
-              <input type="email" name="email" class="form-control" placeholder="Entrer le mail" value="<?= $result['mail'] ?>" required>
-            </div>
-            <div class="form-group">
-              <label for="adress">adress postal</label>
-              <input type="text" name="adress" class="form-control" placeholder="Entrer l'adress postale" value="<?= $result['adress'] ?>" required>
-            </div>
-            <input type="submit" name="submit" class="btn btn-primary">
+            <?= Form::getInput('id', 'hidden', $result['id']) ?>
+            <?php
+            foreach (Form::editForm() as list($a, $b, $c, $d)) :
+              echo  Form::getForm($a, $b, $c, $d);
+            endforeach;
+            echo Form::getInput('submit', 'submit', 'submit');
+            ?>
+
           </form>
           <!-- fin d'ajout des employées  -->
         </div>
