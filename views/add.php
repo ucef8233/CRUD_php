@@ -5,7 +5,7 @@ use \projet\HTML\Form;
 use \projet\Autoloader;
 use \projet\Database\Functions;
 
-require 'classes/Autoloader.php';
+require '../classes/Autoloader.php';
 Autoloader::register();
 Functions::submit();
 ?>

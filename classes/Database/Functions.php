@@ -29,6 +29,7 @@ class Functions
       $id = $_GET['del'];
       $utulisateur = new Utulisateur;
       $utulisateur->delet($id);
+    // header('Location :../index.php');
     endif;
   }
 
@@ -57,5 +58,4 @@ class Functions
     endif;
     return $result;
   }
- 
 }

@@ -27,7 +27,7 @@ Functions::delet();
         <div class="jumbotron">
           <div class="my-4">
             <h4 class="mb-4 d-inline">Employée </h4> &nbsp;
-            <a href="add.php" class="btn btn-success"> Add employée <i class="fas fa-id-badge"></i></a>
+            <a href="views/add.php" class="btn btn-success"> Add employée <i class="fas fa-id-badge"></i></a>
           </div>
           <!-- liste des employée -->
           <table class="table">
@@ -55,7 +55,7 @@ Functions::delet();
                   <td><?= $row['adress'] ?></td>
                   <td><?= $row['mail'] ?></td>
                   <td><?= $row['date_integration'] ?></td>
-                  <td><a class="btn btn-sm btn-primary" href="edit.php?id=<?= $row['id'] ?>"> <i class="fas fa-user-edit "></i> Edit</a> &nbsp;
+                  <td><a class="btn btn-sm btn-primary" href="views/edit.php?id=<?= $row['id'] ?>"> <i class="fas fa-user-edit "></i> Edit</a> &nbsp;
                     <a class="btn btn-sm btn-danger" href="index.php?del=<?= $row['id'] ?> "><i class="fas fa-user-minus "></i> Delet</a></td>
                 </tr>
               <?php endforeach ?>
