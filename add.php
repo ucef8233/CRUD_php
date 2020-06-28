@@ -1,12 +1,8 @@
 <?php
 // function autoload classes //
-function __autoload($class)
-{
-  require_once "classes/$class.php";
-}
-$function = new Functions;
-$function->submit();
-
+require 'classes/Autoloader.php';
+Autoloader::register();
+Functions::submit();
 ?>
 <!DOCTYPE html>
 <html lang="en">

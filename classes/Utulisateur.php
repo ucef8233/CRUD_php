@@ -3,7 +3,7 @@ class Utulisateur extends Db
 // recuperation de tout les utulisateur de la base de donnée
 {
   /**
-   * @return array
+   * @return array tout les info de la base de donnée
    */
   public function select()
   {
@@ -18,9 +18,7 @@ class Utulisateur extends Db
   }
 
   /**
-   * @param mixed $champs
-   * 
-   * @return [type]
+   * @param array $champs tableau des info inserer par l'utuisateur
    */
   public function insert($champs)
   {
@@ -38,6 +36,11 @@ class Utulisateur extends Db
   }
 
 
+  /**
+   * @param number $id id selectionner par l'utulisateur
+   * 
+   * @return [array] $result tableau des information de l'utulisateur liée a la variable $id
+   */
   public function selectOne($id)
   {
     $sql = "SELECT * FROM utulisateurs WHERE id = :id";
@@ -49,6 +52,10 @@ class Utulisateur extends Db
   }
 
 
+  /**
+   * @param array $champs table des info a modiffier 
+   * @param number $id id de l'utulisateur a modiffier 
+   */
   public function update($champs, $id)
   {
     $sql = ("UPDATE utulisateurs SET nom = :nom, mail = :mail, adress = :adress WHERE id = $id");
@@ -61,6 +68,9 @@ class Utulisateur extends Db
       header('Location: index.php');
     endif;
   }
+  /**
+   * @param number $id
+   */
   public function delet($id)
   {
     $sql = "DELETE FROM utulisateurs WHERE id = :id";

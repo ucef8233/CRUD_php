@@ -1,11 +1,8 @@
 <?php
 // function autoload classes //
-function __autoload($class)
-{
-  require_once "classes/$class.php";
-}
-$function = new Functions;
-$function->delet();
+require 'classes/Autoloader.php';
+Autoloader::register();
+Functions::delet();
 ?>
 <!DOCTYPE html>
 <html lang="en">

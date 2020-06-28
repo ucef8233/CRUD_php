@@ -1,9 +1,8 @@
 <?php
 class Functions
 {
-  public $test;
-
-  function submit()
+  // fonction d'ajout d'utulisateur'
+  public static function submit()
   {
     if (isset($_POST['submit'])) :
       $nom = addslashes($_POST['nom']);
@@ -21,8 +20,8 @@ class Functions
       $utulisateurs->insert($champs);
     endif;
   }
-
-  function delet()
+  /// fonction de supretion d'utulisateur 
+  public static function delet()
   {
     if (isset($_GET['del'])) :
       $id = $_GET['del'];
@@ -31,7 +30,8 @@ class Functions
     endif;
   }
 
-  function edit()
+  /// function de modification d'utulisateur
+  public static function edit()
   {
     if (isset($_GET['id'])) :
       $userId = $_GET['id'];
