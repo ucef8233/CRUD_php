@@ -2,7 +2,6 @@
 
 namespace projet\Database;
 
-use projet;
 use \PDO;
 
 class Utulisateur extends Db
@@ -37,7 +36,7 @@ class Utulisateur extends Db
     endforeach;
     $stmtExec = $stmt->execute();
     if ($stmtExec) :
-      header('Location:index.php?');
+      header('Location:index.php?p=home');
     endif;
   }
 
@@ -71,7 +70,7 @@ class Utulisateur extends Db
     endforeach;
     $stmtExec = $stmt->execute();
     if ($stmtExec) :
-      header('Location:index.php');
+      header('Location:index.php?p=home');
     endif;
   }
   /**
@@ -83,5 +82,8 @@ class Utulisateur extends Db
     $stmt = $this->connect()->prepare($sql);
     $stmt->bindValue(':id', $id);
     $stmtExec = $stmt->execute();
+    // if ($stmtExec) :
+    //   header('Location:index.php?p=home');
+    // endif;
   }
 }

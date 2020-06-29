@@ -38,4 +38,12 @@ class Form extends Functions
     ];
     return $form;
   }
+  public static function addLogin()
+  {
+    $form = [
+      ['Mail', 'email', 'email'],
+      ['Password', 'password', 'password'],
+    ];
+    return $form;
+  }
 }

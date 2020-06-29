@@ -1,6 +1,9 @@
 <?php
 
+
 namespace projet\Database;
+
+
 
 class Functions
 {
@@ -37,9 +40,12 @@ class Functions
   public static function edit()
   {
     if (isset($_GET['p'])) :
+      // session_start();
       $userId = $_GET['p'];
+      // $_SESSION['id'] = $userId;
       $utulisateurs = new Utulisateur;
       $result =  $utulisateurs->selectOne($userId);
+
     endif;
     if (isset($_POST['submit'])) :
       $nom = addslashes($_POST['nom']);

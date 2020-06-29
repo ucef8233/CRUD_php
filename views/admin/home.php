@@ -32,7 +32,7 @@ use projet\Database\Utulisateur;
           <td><?= $row['mail'] ?></td>
           <td><?= $row['date_integration'] ?></td>
           <td><a class="btn btn-sm btn-primary" href="index.php?p=<?= $row['id'] ?>"> <i class="fas fa-user-edit "></i> Edit</a> &nbsp;
-            <a class="btn btn-sm btn-danger" href="index.php?del=<?= $row['id'] ?> "><i class="fas fa-user-minus "></i> Delet</a></td>
+            <a class="btn btn-sm btn-danger" href="index.php?p=home&del=<?= $row['id'] ?> "><i class="fas fa-user-minus "></i> Delet</a></td>
         </tr>
     <?php endforeach;
     endif; ?>

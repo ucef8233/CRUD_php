@@ -1,18 +1,11 @@
 <?php
-
-use \projet\Autoloader;
-
-require '../classes/Autoloader.php';
-Autoloader::register();
+$title = 'Modiffier l\'utilisateur';
 
 use \projet\HTML\Form;
 use \projet\Database\Functions;
 
-Functions::edit();
 $result = Functions::edit();
-
 ?>
-
 <!-- Modiffier des employer  -->
 <form action="" method="post">
   <?= Form::getInput('id', 'hidden', $result['id']) ?>
@@ -24,5 +17,5 @@ $result = Functions::edit();
   ?>
 
 </form>
-<?php var_dump($result) ?>
+
 <!-- fin d'ajout des employées  -->
