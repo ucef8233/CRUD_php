@@ -19,7 +19,7 @@ class Connexion_exec
           exit();
           return $result;
         elseif ($table_name == 'user') :
-          header("Location: utulisateurs.php?p=home");
+          header("Location: user.php?p=home");
           exit();
           return $result;
         endif;

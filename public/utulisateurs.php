@@ -31,7 +31,7 @@ elseif ($p === 'edit') :
   Functions::edit();
   require '../views/admin/edit.php';
 else :
-  require '../views/admin/404.php';
+  require '../views/template/404.php';
 endif;
 $contente = ob_get_clean();
 require '../views/template/default.php';

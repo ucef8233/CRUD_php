@@ -1,10 +1,9 @@
 <?php
 
 
-session_start();
-if ($_SESSION) :
+if ($_SESSION['user']['password']) :
   $title = "profil User";
-  $session = $_SESSION['user']['nom'];
+// $session = $_SESSION['user']['nom'];
 else :
-  header('location: index.php?p=login');
+  header('location: user.php?p=login');
 endif;

@@ -1,5 +1,6 @@
 <?php
 // require '../classes/Autoloader.php';
+session_start();
 
 use \projet\Database\Connexion_exec;
 use \projet\Database\Functions;

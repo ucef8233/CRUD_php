@@ -20,7 +20,6 @@
       <ul class="navbar-nav ">
 
         <?php
-        // var_dump(isset($_SESSION['utulisateurs']['nom']));
         if (isset($_SESSION['utulisateurs']['nom'])) : ?>
           <li class="nav-item mx-5">
             <a class="nav-link" href="utulisateurs.php?p=logout">logout</a>
