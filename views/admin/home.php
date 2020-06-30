@@ -1,14 +1,11 @@
 <?php
 
 use projet\Database\Utulisateur;
+/////////////////////////////////////////////////////////////// a refaire /////////////
 
-
-session_start();
+// session_start();
 if ($_SESSION) :
   $title = 'Liste des utulisateurs';
-  // $name = $_SESSION['utulisateurs']['nom'];
-  // var_dump($_SESSION);
-  // function autoload classes //
 ?>
   <!-- liste des employée -->
   <table class="table">

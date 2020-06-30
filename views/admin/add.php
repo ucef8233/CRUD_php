@@ -3,7 +3,7 @@
 
 use \projet\HTML\Form;
 
-session_start();
+// session_start();
 if ($_SESSION) :
   $title = 'ajouter un utilisateur';
   // $name = $_SESSION['utulisateurs']['nom'];
@@ -14,7 +14,7 @@ if ($_SESSION) :
       echo  Form::getForm($a, $b, $c);
     endforeach;
     ?>
-    <?= Form::getInput('submit', 'submit', 'submit') ?>
+    <?= Form::getInput('submit', 'submit', 'add') ?>
   </form>
 <?php
 else :

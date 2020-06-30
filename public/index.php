@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // require '../classes/Autoloader.php';
 use \projet\Database\Functions;
 use \projet\Database\Connexion_exec;
@@ -25,9 +25,11 @@ elseif ($p === 'home') :
   require '../views/admin/home.php';
 elseif ($p === 'logout') :
   require '../views/admin/logout.php';
-else :
+elseif (is_numeric($p)) :
   Functions::edit();
   require '../views/admin/edit.php';
+else :
+  require '../views/admin/404.php';
 endif;
 $contente = ob_get_clean();
 require '../views/template/default.php';

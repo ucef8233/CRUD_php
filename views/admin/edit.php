@@ -3,11 +3,13 @@
 use \projet\HTML\Form;
 use \projet\Database\Functions;
 
-session_start();
+
+// session_start();
+
 if ($_SESSION) :
   $title = 'Modiffier l\'utilisateur';
-  // $name = $_SESSION['utulisateurs']['nom'];
   $result = Functions::edit();
+
 ?>
   <!-- Modiffier des employer  -->
   <form action="" method="post">
@@ -16,7 +18,7 @@ if ($_SESSION) :
     foreach (Form::editForm() as list($a, $b, $c, $d)) :
       echo  Form::getForm($a, $b, $c, $d);
     endforeach;
-    echo Form::getInput('submit', 'submit', 'submit');
+    echo Form::getInput('submit', 'submit', 'edit');
     ?>
   </form>
 <?php

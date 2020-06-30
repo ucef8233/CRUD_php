@@ -2,7 +2,7 @@
 
 namespace projet\Database;
 
-session_start();
+// session_start();
 class Connexion_exec
 {
   public static function Cnx($table_name)

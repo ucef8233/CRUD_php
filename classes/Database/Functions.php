@@ -43,7 +43,7 @@ class Functions
       $userId = $_GET['p'];
       $utulisateurs = new Utulisateur;
       $result =  $utulisateurs->selectOne($userId);
-
+      $_SESSION['id'] = $userId;
     endif;
     if (isset($_POST['submit'])) :
       $nom = addslashes($_POST['nom']);
