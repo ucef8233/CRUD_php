@@ -14,7 +14,7 @@ class Connexion extends Db
     $stmt = $this->connect()->prepare($sql);
     $stmt->bindValue(":email", $email);
     $stmt->execute();
-    $result = $stmt->fetch();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
     $_SESSION[$table_name] = $result;
     return $result;
   }

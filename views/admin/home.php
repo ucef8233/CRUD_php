@@ -4,7 +4,7 @@ use projet\Database\Utulisateur;
 /////////////////////////////////////////////////////////////// a refaire /////////////
 
 // session_start();
-if ($_SESSION) :
+if ($_SESSION['utulisateurs']['password']) :
   $title = 'Liste des utulisateurs';
 ?>
   <!-- liste des employée -->
@@ -34,17 +34,17 @@ if ($_SESSION) :
             <td><?= $row['adress'] ?></td>
             <td><?= $row['mail'] ?></td>
             <td><?= $row['date_integration'] ?></td>
-            <td><a class="btn btn-sm btn-primary" href="index.php?p=<?= $row['id'] ?>"> <i class="fas fa-user-edit "></i> Edit</a> &nbsp;
-              <a class="btn btn-sm btn-danger" href="index.php?p=home&del=<?= $row['id'] ?> "><i class="fas fa-user-minus "></i> Delet</a></td>
+            <td><a class="btn btn-sm btn-primary" href="utulisateurs.php?p=edit&id=<?= $row['id'] ?>"> <i class="fas fa-user-edit "></i> Edit</a> &nbsp;
+              <a class="btn btn-sm btn-danger" href="utulisateurs.php?p=home&del=<?= $row['id'] ?> "><i class="fas fa-user-minus "></i> Delet</a></td>
           </tr>
       <?php endforeach;
       endif; ?>
     </tbody>
   </table>
-  <a href="index.php?p=add" class="btn btn-success float-right mr-5"> Add employée <i class="fas fa-id-badge"></i></a>
+  <a href="utulisateurs.php?p=add" class="btn btn-success float-right mr-5"> Add employée <i class="fas fa-id-badge"></i></a>
   <!-- fin de la liste -->
 <?php
 else :
-  header('location: index.php?p=login');
+  header('location: utulisateurs.php?p=login');
 endif;
 ?>

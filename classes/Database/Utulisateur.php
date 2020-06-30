@@ -39,12 +39,12 @@ class Utulisateur extends Db
     $stmtExec = $stmt->execute();
     if ($stmtExec) :
       if ($table_name == 'utulisateurs') :
-        header('Location:index.php?p=home');
+        header('Location:utulisateurs.php?p=home');
       elseif ($table_name == 'user') :
         header('Location:user.php?p=login');
       endif;
     endif;
-  }
+  }          
 
 
   /**
@@ -76,7 +76,7 @@ class Utulisateur extends Db
     endforeach;
     $stmtExec = $stmt->execute();
     if ($stmtExec) :
-      header('Location:index.php?p=home');
+      header('Location:utulisateurs.php?p=home');
     endif;
   }
   /**
@@ -89,7 +89,7 @@ class Utulisateur extends Db
     $stmt->bindValue(':id', $id);
     $stmtExec = $stmt->execute();
     // if ($stmtExec) :
-    //   header('Location:index.php?p=home');
+    //   header('Location:utulisateurs.php?p=home');
     // endif;
   }
 }

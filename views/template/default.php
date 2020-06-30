@@ -12,20 +12,22 @@
 <body>
 
   <nav class="navbar navbar-expand-md navbar-dark mb-5 bg-success">
-    <a class="navbar-brand" href="index.php?p=home">Projet</a>
+    <a class="navbar-brand" href="utulisateurs.php?p=home">Projet</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarCollapse">
       <ul class="navbar-nav ">
-        <?php if (isset($_SESSION['utulisateurs'])) : ?>
 
+        <?php
+        // var_dump(isset($_SESSION['utulisateurs']['nom']));
+        if (isset($_SESSION['utulisateurs']['nom'])) : ?>
           <li class="nav-item mx-5">
-            <a class="nav-link" href="index.php?p=logout">logout</a>
+            <a class="nav-link" href="utulisateurs.php?p=logout">logout</a>
           </li>
         <?php else : ?>
           <li class="nav-item ">
-            <a class="nav-link" href="index.php?p=login">login</a>
+            <a class="nav-link" href="utulisateurs.php?p=login">login</a>
           </li>
         <?php endif; ?>
       </ul>

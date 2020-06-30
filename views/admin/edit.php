@@ -6,7 +6,7 @@ use \projet\Database\Functions;
 
 // session_start();
 
-if ($_SESSION) :
+if ($_SESSION['utulisateurs']['password']) :
   $title = 'Modiffier l\'utilisateur';
   $result = Functions::edit();
 
@@ -23,7 +23,7 @@ if ($_SESSION) :
   </form>
 <?php
 else :
-  header('location: index.php?p=login');
+  header('location: utulisateurs.php?p=login');
 endif;
 ?>
 <!-- fin d'ajout des employées  -->

@@ -13,6 +13,7 @@ else :
   $p = 'login';
 endif;
 
+
 ob_start();
 if ($p === 'login') :
   Connexion_exec::Cnx('utulisateurs');
@@ -25,7 +26,8 @@ elseif ($p === 'home') :
   require '../views/admin/home.php';
 elseif ($p === 'logout') :
   require '../views/admin/logout.php';
-elseif (is_numeric($p)) :
+// 
+elseif ($p === 'edit') :
   Functions::edit();
   require '../views/admin/edit.php';
 else :
@@ -33,3 +35,5 @@ else :
 endif;
 $contente = ob_get_clean();
 require '../views/template/default.php';
+// elseif ($p === 'ko') :
+//   header('location: utulisateurs.php?p=login&error=ko');

@@ -39,8 +39,8 @@ class Functions
   /// function de modification d'utulisateur
   public static function edit()
   {
-    if (isset($_GET['p'])) :
-      $userId = $_GET['p'];
+    if (isset($_GET['id'])) :
+      $userId = $_GET['id'];
       $utulisateurs = new Utulisateur;
       $result =  $utulisateurs->selectOne($userId);
       $_SESSION['id'] = $userId;

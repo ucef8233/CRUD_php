@@ -18,6 +18,6 @@ if ($_SESSION) :
   </form>
 <?php
 else :
-  header('location: index.php?p=login');
+  header('location: utulisateurs.php?p=login');
 endif;
 ?>
