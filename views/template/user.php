@@ -12,14 +12,13 @@
 <body>
 
   <nav class="navbar navbar-expand-md navbar-dark mb-5 bg-success">
-    <a class="navbar-brand" href="user.php?p=home">Projet</a>
+    <a class="navbar-brand" href="user.php">Projet</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarCollapse">
       <ul class="navbar-nav ">
         <?php if ($_SESSION) : ?>
-
           <li class="nav-item mx-5">
             <a class="nav-link" href="user.php?p=logout">logout</a>
           </li>

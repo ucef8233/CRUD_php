@@ -31,9 +31,8 @@ class Connexion_exec
         header("Location: user.php?p=login&error=ko");
         exit();
       endif;
-
-      // return $result;
-      $_SESSION[$table_name] = $result;
+      return $result;
+    // $_SESSION[$table_name] = $result;
     endif;
   }
 }

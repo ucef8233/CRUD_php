@@ -6,7 +6,7 @@ use projet\Database\Utulisateur;
 session_start();
 if ($_SESSION) :
   $title = 'Liste des utulisateurs';
-  $session = $_SESSION['utulisateurs']['nom'];
+  // $name = $_SESSION['utulisateurs']['nom'];
   // var_dump($_SESSION);
   // function autoload classes //
 ?>

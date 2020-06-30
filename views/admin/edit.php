@@ -6,9 +6,7 @@ use \projet\Database\Functions;
 session_start();
 if ($_SESSION) :
   $title = 'Modiffier l\'utilisateur';
-  $session = $_SESSION['utulisateurs']['nom'];
-
-
+  // $name = $_SESSION['utulisateurs']['nom'];
   $result = Functions::edit();
 ?>
   <!-- Modiffier des employer  -->
@@ -20,7 +18,6 @@ if ($_SESSION) :
     endforeach;
     echo Form::getInput('submit', 'submit', 'submit');
     ?>
-
   </form>
 <?php
 else :

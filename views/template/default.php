@@ -18,7 +18,7 @@
     </button>
     <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarCollapse">
       <ul class="navbar-nav ">
-        <?php if ($_SESSION) : ?>
+        <?php if (isset($_SESSION['utulisateurs'])) : ?>
 
           <li class="nav-item mx-5">
             <a class="nav-link" href="index.php?p=logout">logout</a>
@@ -27,7 +27,6 @@
           <li class="nav-item ">
             <a class="nav-link" href="index.php?p=login">login</a>
           </li>
-
         <?php endif; ?>
       </ul>
     </div>

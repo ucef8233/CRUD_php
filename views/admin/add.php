@@ -6,7 +6,7 @@ use \projet\HTML\Form;
 session_start();
 if ($_SESSION) :
   $title = 'ajouter un utilisateur';
-  $session = $_SESSION['utulisateurs']['nom'];
+  // $name = $_SESSION['utulisateurs']['nom'];
 ?>
   <form action="" method="POST">
     <?php
