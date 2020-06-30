@@ -8,7 +8,7 @@ namespace projet\Database;
 class Functions
 {
   // fonction d'ajout d'utulisateur'
-  public static function submit()
+  public static function submit($table_user)
   {
     if (isset($_POST['submit'])) :
       $nom = addslashes($_POST['nom']);
@@ -22,7 +22,7 @@ class Functions
         'adress' => $adress
       ];
       $utulisateurs = new Utulisateur;
-      $utulisateurs->insert($champs);
+      $utulisateurs->insert($table_user, $champs);
     endif;
   }
   /// fonction de supretion d'utulisateur 
@@ -40,9 +40,7 @@ class Functions
   public static function edit()
   {
     if (isset($_GET['p'])) :
-      // session_start();
       $userId = $_GET['p'];
-      // $_SESSION['id'] = $userId;
       $utulisateurs = new Utulisateur;
       $result =  $utulisateurs->selectOne($userId);
 

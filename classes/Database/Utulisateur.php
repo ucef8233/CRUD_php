@@ -2,6 +2,8 @@
 
 namespace projet\Database;
 
+// session_start();
+
 use \PDO;
 
 class Utulisateur extends Db
@@ -10,9 +12,9 @@ class Utulisateur extends Db
   /**
    * @return array tout les info de la base de donnée
    */
-  public function select()
+  public function select($table_name)
   {
-    $sql = "SELECT * FROM utulisateurs ";
+    $sql = "SELECT * FROM $table_name ";
     $result = $this->connect()->query($sql);
     if ($result->rowCount() > 0) :
       while ($row = $result->fetch()) :
@@ -25,18 +27,22 @@ class Utulisateur extends Db
   /**
    * @param array $champs tableau des info inserer par l'utuisateur
    */
-  public function insert($champs)
+  public function insert($table_name, $champs)
   {
     $implodeColumns = implode(', ', array_keys($champs));
     $implodePlaceholder = implode(", :", array_keys($champs));
-    $sql = "INSERT INTO utulisateurs ($implodeColumns) VALUES (:" . $implodePlaceholder . ")";
+    $sql = "INSERT INTO $table_name ($implodeColumns) VALUES (:" . $implodePlaceholder . ")";
     $stmt = $this->connect()->prepare($sql);
     foreach ($champs as $key => $value) :
       $stmt->bindValue(':' . $key, $value);
     endforeach;
     $stmtExec = $stmt->execute();
     if ($stmtExec) :
-      header('Location:index.php?p=home');
+      if ($table_name == 'utulisateurs') :
+        header('Location:index.php?p=home');
+      elseif ($table_name == 'user') :
+        header('Location:user.php?p=login');
+      endif;
     endif;
   }
 

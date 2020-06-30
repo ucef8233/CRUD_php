@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 // require '../classes/Autoloader.php';
 use \projet\Database\Functions;
 use \projet\Database\Connexion_exec;
@@ -15,14 +15,16 @@ endif;
 
 ob_start();
 if ($p === 'login') :
-  Connexion_exec::Admin_Cnx();
+  Connexion_exec::Cnx('utulisateurs');
   require '../views/admin/login.php';
 elseif ($p === 'add') :
-  Functions::submit();
+  Functions::submit('utulisateurs');
   require '../views/admin/add.php';
 elseif ($p === 'home') :
   Functions::delet();
   require '../views/admin/home.php';
+elseif ($p === 'logout') :
+  require '../views/admin/logout.php';
 else :
   Functions::edit();
   require '../views/admin/edit.php';

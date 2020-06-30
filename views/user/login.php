@@ -1,12 +1,9 @@
 <?php
-
-$title = 'Connexion utulisateur';
+$title = "connexion User";
 
 use \projet\HTML\Form;
 use \projet\HTML\Error;
 
-// \projet\Database\
-// var_dump($_SESSION);
 ?>
 <form action="" method="POST">
   <?= Error::error_cnx(); ?>
@@ -16,4 +13,5 @@ use \projet\HTML\Error;
   endforeach;
   ?>
   <?= Form::getInput('submit', 'submit', 'Ce connecter  ') ?>
+  <a href="user.php?p=inscription">S'inscrire</a>
 </form>

@@ -2,6 +2,7 @@
 
 namespace projet\Database;
 
+session_start();
 
 use \PDO;
 
@@ -14,6 +15,7 @@ class Connexion extends Db
     $stmt->bindValue(":email", $email);
     $stmt->execute();
     $result = $stmt->fetch();
+    $_SESSION[$table_name] = $result;
     return $result;
   }
 }

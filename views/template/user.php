@@ -12,7 +12,7 @@
 <body>
 
   <nav class="navbar navbar-expand-md navbar-dark mb-5 bg-success">
-    <a class="navbar-brand" href="index.php">Projet</a>
+    <a class="navbar-brand" href="user.php?p=home">Projet</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -21,11 +21,11 @@
         <?php if ($_SESSION) : ?>
 
           <li class="nav-item mx-5">
-            <a class="nav-link" href="index.php?p=logout">logout</a>
+            <a class="nav-link" href="user.php?p=logout">logout</a>
           </li>
         <?php else : ?>
           <li class="nav-item ">
-            <a class="nav-link" href="index.php?p=login">login</a>
+            <a class="nav-link" href="user.php?p=login">login</a>
           </li>
 
         <?php endif; ?>
