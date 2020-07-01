@@ -26,7 +26,6 @@ elseif ($p === 'home') :
   require '../views/admin/home.php';
 elseif ($p === 'logout') :
   require '../views/admin/logout.php';
-// 
 elseif ($p === 'edit') :
   Functions::edit();
   require '../views/admin/edit.php';

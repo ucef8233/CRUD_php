@@ -22,7 +22,7 @@
       <ul class="navbar-nav ">
 
         <?php
-        if (isset($_SESSION['utulisateurs']['password']) || isset($_SESSION['access_token'])) : ?>
+        if (isset($_SESSION['utulisateurs']['password']) || isset($_GET['code'])) : ?>
         <li class="nav-item mx-5">
           <a class="nav-link" href="utulisateurs.php?p=logout">logout</a>
         </li>

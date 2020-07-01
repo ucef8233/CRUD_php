@@ -2,11 +2,14 @@
 
 use projet\Database\Utulisateur;
 /////////////////////////////////////////////////////////////// a refaire /////////////
-
-
-if (isset($_SESSION['utulisateurs']['password']) || $_SESSION['token']) :
+// require_once "GoogleApi/vendor/autoload.php";
+// $gClient = new Google_Client();
+// $authUrl = $gClient->createAuthUrl();
+if (isset($_SESSION['utulisateurs']['password'])) :
   $title = 'Liste des utulisateurs';
+  var_dump($_SESSION['code']);
 ?>
+
 <!-- liste des employée -->
 <table class="table">
   <thead>
@@ -43,8 +46,8 @@ if (isset($_SESSION['utulisateurs']['password']) || $_SESSION['token']) :
       endif; ?>
   </tbody>
 </table>
-<a href="utulisateurs.php?p=add" class="btn btn-success float-right mr-5"> Add employée <i
-    class="fas fa-id-badge"></i></a>
+<a href="utulisateurs.php?p=add" class="btn btn-success float-right mr-5"> Add employée <iclass="fas fa-id-badge">
+    </i></a>
 <!-- fin de la liste -->
 <?php
 
