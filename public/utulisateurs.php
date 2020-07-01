@@ -9,6 +9,8 @@ require '../classes/Autoloader.php';
 
 if (isset($_GET['p'])) :
   $p = $_GET['p'];
+// elseif ($p === 'login' && (isset($_SESSION['utulisateurs']['password']) || isset($_SESSION['id_google']))) :
+//   $p = 'home';
 else :
   $p = 'login';
 endif;
@@ -29,6 +31,8 @@ elseif ($p === 'logout') :
 elseif ($p === 'edit') :
   Functions::edit();
   require '../views/admin/edit.php';
+elseif ($p === 'callback') :
+  require '../views/admin/g-callback.php';
 else :
   require '../views/template/404.php';
 endif;

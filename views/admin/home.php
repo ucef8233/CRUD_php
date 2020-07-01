@@ -2,12 +2,9 @@
 
 use projet\Database\Utulisateur;
 /////////////////////////////////////////////////////////////// a refaire /////////////
-// require_once "GoogleApi/vendor/autoload.php";
-// $gClient = new Google_Client();
-// $authUrl = $gClient->createAuthUrl();
-if (isset($_SESSION['utulisateurs']['password'])) :
+
+if (isset($_SESSION['utulisateurs']['password']) || isset($_SESSION['id_google'])) :
   $title = 'Liste des utulisateurs';
-  var_dump($_SESSION['code']);
 ?>
 
 <!-- liste des employée -->

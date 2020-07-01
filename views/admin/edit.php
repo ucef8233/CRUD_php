@@ -6,21 +6,21 @@ use \projet\Database\Functions;
 
 // session_start();
 
-if ($_SESSION['utulisateurs']['password']) :
+if (!isset($_SESSION['utulisateurs']['password']) || !isset($_SESSION['id_google'])) :
   $title = 'Modiffier l\'utilisateur';
   $result = Functions::edit();
 
 ?>
-  <!-- Modiffier des employer  -->
-  <form action="" method="post">
-    <?= Form::getInput('id', 'hidden', $result['id']) ?>
-    <?php
+<!-- Modiffier des employer  -->
+<form action="" method="post">
+  <?= Form::getInput('id', 'hidden', $result['id']) ?>
+  <?php
     foreach (Form::editForm() as list($a, $b, $c, $d)) :
       echo  Form::getForm($a, $b, $c, $d);
     endforeach;
     echo Form::getInput('submit', 'submit', 'edit');
     ?>
-  </form>
+</form>
 <?php
 else :
   header('location: utulisateurs.php?p=login');
