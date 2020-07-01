@@ -1,8 +1,8 @@
 <?php
 $title = "connexion User";
 
-use \projet\HTML\Form;
-use \projet\HTML\Error;
+use \projet\classes\HTML\Form;
+use \projet\classes\HTML\Error;
 
 ?>
 <form action="" method="POST">

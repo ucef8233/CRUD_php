@@ -4,8 +4,10 @@
 /////   add session pour deconexion si precedent 
 
 
-use \projet\HTML\Form;
-use \projet\HTML\Error;
+use \projet\classes\HTML\Form;
+use \projet\classes\HTML\Error;
+use \projet\Config;
+
 
 $access = null;
 if (!empty($_COOKIE['utulisateur'])) :
@@ -15,7 +17,8 @@ endif;
 if ($access) :
   header('location: utulisateurs.php?p=home');
 else :
-  require_once "config.php";
+  $configuration = new Config;
+  $gClient = $configuration->configGoogle();
   $title = 'Connexion utulisateur';
 
 ?>
@@ -30,5 +33,4 @@ else :
   <a class="btn btn-danger" href="<?= $gClient->createAuthUrl() ?>"> Google + </a>
 </form>
 <?php
-
 endif;

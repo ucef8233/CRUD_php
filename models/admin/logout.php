@@ -1,8 +1,12 @@
 <?php
-require_once "config.php";
+
+use projet\Config;
+
+$configuration = new Config;
+$gClient = $configuration->configGoogle();
 unset($_SESSION['access_token']);
 $gClient->revokeToken();
-// Suppression du cookie designPrefere
+
 unset($_COOKIE['utulisateur']);
 setcookie('utulisateur', '', time() - 10);
 session_destroy();

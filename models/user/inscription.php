@@ -1,7 +1,7 @@
 <?php
 $title = "Inscription User";
 
-use \projet\HTML\Form;
+use \projet\classes\HTML\Form;
 ?>
 <form action="" method="POST">
   <?php

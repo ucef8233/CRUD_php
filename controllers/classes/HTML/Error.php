@@ -1,6 +1,6 @@
 <?php
 
-namespace projet\HTML;
+namespace projet\classes\HTML;
 
 class Error
 {

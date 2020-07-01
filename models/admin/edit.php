@@ -1,7 +1,7 @@
 <?php
 
-use \projet\HTML\Form;
-use \projet\Database\Functions;
+use \projet\classes\HTML\Form;
+use \projet\classes\Database\Functions;
 
 
 // session_start();

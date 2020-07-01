@@ -1,7 +1,7 @@
 <?php
 
 
-namespace projet\Database;
+namespace projet\classes\Database;
 
 
 
@@ -35,16 +35,15 @@ class Functions
     // header('Location :../index.php');
     endif;
   }
-
-  /// function de modification d'utulisateur
   public static function edit()
   {
-    if (isset($_GET['id'])) :
-      $userId = $_GET['id'];
-      $utulisateurs = new Utulisateur;
-      $result =  $utulisateurs->selectOne($userId);
-      $_SESSION['id'] = $userId;
+    $id = new Utulisateur;
+    $userId = $id->getId();
+    if (!$userId) :
+      header('location:utulisateurs.php?p=404');
     endif;
+    $utulisateurs = new Utulisateur;
+    $result = $utulisateurs->selectOne($userId);
     if (isset($_POST['submit'])) :
       $nom = addslashes($_POST['nom']);
       // $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
@@ -62,4 +61,6 @@ class Functions
     endif;
     return $result;
   }
+  /// function de modification d'utulisateur
+
 }

@@ -1,10 +1,12 @@
 <?php
 session_start();
 // require '../classes/Autoloader.php';
-use \projet\Database\Functions;
-use \projet\Database\Connexion_exec;
+use \projet\classes\Database\Functions;
+use \projet\classes\Database\Connexion_exec;
+
+  
 // function autoload classes //
-require '../classes/Autoloader.php';
+require '../controllers/Autoloader.php';
 \projet\Autoloader::register();
 
 if (isset($_GET['p'])) :
@@ -19,24 +21,22 @@ endif;
 ob_start();
 if ($p === 'login') :
   Connexion_exec::Cnx('utulisateurs');
-  require '../views/admin/login.php';
+  require '../models/admin/login.php';
 elseif ($p === 'add') :
   Functions::submit('utulisateurs');
-  require '../views/admin/add.php';
-elseif ($p === 'home') :
+  require '../models/admin/add.php';
+elseif ($p === 'home') :  
   Functions::delet();
-  require '../views/admin/home.php';
+  require '../models/admin/home.php';
 elseif ($p === 'logout') :
-  require '../views/admin/logout.php';
+  require '../models/admin/logout.php';
 elseif ($p === 'edit') :
   Functions::edit();
-  require '../views/admin/edit.php';
+  require '../models/admin/edit.php';
 elseif ($p === 'callback') :
-  require '../views/admin/g-callback.php';
+  require '../controllers/gcallback.php';
 else :
-  require '../views/template/404.php';
+  require '../models/template/404.php';
 endif;
 $contente = ob_get_clean();
-require '../views/template/default.php';
-// elseif ($p === 'ko') :
-//   header('location: utulisateurs.php?p=login&error=ko');
+require '../models/template/default.php';

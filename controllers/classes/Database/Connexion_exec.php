@@ -1,7 +1,6 @@
 <?php
 
-namespace projet\Database;
-
+namespace projet\classes\Database;
 // session_start();
 class Connexion_exec
 {

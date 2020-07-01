@@ -1,7 +1,7 @@
 <?php
 
 
-use \projet\HTML\Form;
+use \projet\classes\HTML\Form;
 
 // session_start();
 if (isset($_SESSION['utulisateurs']['id']) || isset($_SESSION['id_google'])) :

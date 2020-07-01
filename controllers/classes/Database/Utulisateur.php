@@ -1,6 +1,6 @@
 <?php
 
-namespace projet\Database;
+namespace projet\classes\Database;
 
 // session_start();
 
@@ -44,7 +44,7 @@ class Utulisateur extends Db
         header('Location:user.php?p=login');
       endif;
     endif;
-  }          
+  }
 
 
   /**
@@ -91,5 +91,15 @@ class Utulisateur extends Db
     // if ($stmtExec) :
     //   header('Location:utulisateurs.php?p=home');
     // endif;
+  }
+
+
+  public function getId()
+  {
+    if (isset($_GET['id'])) :
+      $userId = $_GET['id'];
+      $_SESSION['id'] = $userId;
+      return $userId;
+    endif;
   }
 }

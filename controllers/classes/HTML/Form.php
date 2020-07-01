@@ -1,8 +1,8 @@
 <?php
 
-namespace projet\HTML;
+namespace projet\classes\HTML;
 
-use projet\Database\Functions;
+use projet\classes\Database\Functions;
 
 class Form extends Functions
 {
