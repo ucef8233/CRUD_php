@@ -22,11 +22,11 @@
       <ul class="navbar-nav ">
 
         <?php
-        if (isset($_SESSION['utulisateurs']['password']) || isset($_SESSION['id_google'])) : ?>
+        if (isset($_SESSION['utulisateurs']['id']) || isset($_SESSION['id_google'])) : ?>
         <li class="nav-item mx-5">
           <a class="nav-link" href="utulisateurs.php?p=logout">logout</a>
         </li>
-        <?php elseif (!isset($_SESSION['utulisateurs']['password']) || !isset($_SESSION['id_google']) || ($_GET['p'] == 'login')) : ?>
+        <?php else : ?>
         <li class="nav-item ">
           <a class="nav-link" href="utulisateurs.php?p=login">login</a>
         </li>

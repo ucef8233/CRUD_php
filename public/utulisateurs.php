@@ -12,7 +12,7 @@ if (isset($_GET['p'])) :
 // elseif ($p === 'login' && (isset($_SESSION['utulisateurs']['password']) || isset($_SESSION['id_google']))) :
 //   $p = 'home';
 else :
-  $p = 'login';
+  $p = 'home';
 endif;
 
 

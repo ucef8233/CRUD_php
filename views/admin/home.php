@@ -2,9 +2,17 @@
 
 use projet\Database\Utulisateur;
 /////////////////////////////////////////////////////////////// a refaire /////////////
+if (isset($_SESSION['utulisateurs']['id'])) :
+  setcookie('utulisateur', $_SESSION['utulisateurs']['id'], time() + 60 * 60 + 24);
+elseif (isset($_SESSION['id_google'])) :
+  setcookie('utulisateur', $_SESSION['id_google'], time() + 60 * 160 + 24);
+endif;
 
-if (isset($_SESSION['utulisateurs']['password']) || isset($_SESSION['id_google'])) :
+
+
+if (isset($_SESSION['utulisateurs']['id']) || isset($_SESSION['id_google'])) :
   $title = 'Liste des utulisateurs';
+  var_dump($_COOKIE);
 ?>
 
 <!-- liste des employée -->

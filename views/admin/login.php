@@ -7,10 +7,17 @@
 use \projet\HTML\Form;
 use \projet\HTML\Error;
 
+$access = null;
+if (!empty($_COOKIE['utulisateur'])) :
+  $access = $_COOKIE['utulisateur'];
+endif;
 
-if (!isset($_SESSION['utulisateurs']['password']) || !isset($_SESSION['id_google'])) :
+if ($access) :
+  header('location: utulisateurs.php?p=home');
+else :
   require_once "config.php";
   $title = 'Connexion utulisateur';
+
 ?>
 <form action="" method="POST">
   <?= Error::error_cnx(); ?>
@@ -23,6 +30,5 @@ if (!isset($_SESSION['utulisateurs']['password']) || !isset($_SESSION['id_google
   <a class="btn btn-danger" href="<?= $gClient->createAuthUrl() ?>"> Google + </a>
 </form>
 <?php
-else :
-  header('location: utulisateurs.php?p=login');
+
 endif;

@@ -6,7 +6,7 @@ use \projet\Database\Functions;
 
 // session_start();
 
-if (!isset($_SESSION['utulisateurs']['password']) || !isset($_SESSION['id_google'])) :
+if (!isset($_SESSION['utulisateurs']['id']) || !isset($_SESSION['id_google'])) :
   $title = 'Modiffier l\'utilisateur';
   $result = Functions::edit();
 

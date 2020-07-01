@@ -4,7 +4,7 @@
 use \projet\HTML\Form;
 
 // session_start();
-if (!isset($_SESSION['utulisateurs']['password']) || !isset($_SESSION['id_google'])) :
+if (isset($_SESSION['utulisateurs']['id']) || isset($_SESSION['id_google'])) :
   $title = 'ajouter un utilisateur';
   // $name = $_SESSION['utulisateurs']['nom'];
 ?>

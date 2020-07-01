@@ -3,9 +3,8 @@ require_once "config.php";
 unset($_SESSION['access_token']);
 $gClient->revokeToken();
 // Suppression du cookie designPrefere
-setcookie('designPrefere');
-// Suppression de la valeur du tableau $_COOKIE
-unset($_COOKIE['designPrefere']);
+unset($_COOKIE['utulisateur']);
+setcookie('utulisateur', '', time() - 10);
 session_destroy();
 header('location:utulisateurs.php?p=login');
 exit();
