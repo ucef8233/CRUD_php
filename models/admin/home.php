@@ -2,15 +2,8 @@
 
 use projet\classes\Database\Utulisateur;
 /////////////////////////////////////////////////////////////// a refaire /////////////
-if (isset($_SESSION['utulisateurs']['id'])) :
-  setcookie('utulisateur', $_SESSION['utulisateurs']['id'], time() + 60 * 160 + 24);
-elseif (isset($_SESSION['id_google'])) :
-  setcookie('utulisateur', $_SESSION['id_google'], time() + 60 * 160 + 24);
-endif;
 
-
-
-if (isset($_SESSION['utulisateurs']['id']) || isset($_SESSION['id_google'])) :
+if (isset($_SESSION['admin']['id'])) :
   $title = 'Liste des utulisateurs';
 ?>
 
@@ -30,7 +23,7 @@ if (isset($_SESSION['utulisateurs']['id']) || isset($_SESSION['id_google'])) :
   <tbody>
     <?php
       $utulisateurs = new Utulisateur;
-      $rows =  $utulisateurs->select('utulisateurs');
+      $rows =  $utulisateurs->select('admin');
       if ($rows) :
         foreach ($rows as $index => $row) :
       ?>
@@ -41,21 +34,20 @@ if (isset($_SESSION['utulisateurs']['id']) || isset($_SESSION['id_google'])) :
       <td><?= $row['adress'] ?></td>
       <td><?= $row['mail'] ?></td>
       <td><?= $row['date_integration'] ?></td>
-      <td><a class="btn btn-sm btn-primary" href="utulisateurs.php?p=edit&id=<?= $row['id'] ?>"> <i
+      <td><a class="btn btn-sm btn-primary" href="admin.php?p=edit&id=<?= $row['id'] ?>"> <i
             class="fas fa-user-edit "></i> Edit</a> &nbsp;
-        <a class="btn btn-sm btn-danger" href="utulisateurs.php?p=home&del=<?= $row['id'] ?> "><i
+        <a class="btn btn-sm btn-danger" href="admin.php?p=home&del=<?= $row['id'] ?> "><i
             class="fas fa-user-minus "></i> Delet</a></td>
     </tr>
     <?php endforeach;
       endif; ?>
   </tbody>
 </table>
-<a href="utulisateurs.php?p=add" class="btn btn-success float-right mr-5"> Add employée <iclass="fas fa-id-badge">
-    </i></a>
+</i></a>
 <!-- fin de la liste -->
 <?php
 
 else :
-  header('location: utulisateurs.php?p=login');
+  header('location: login.php?p=loginadmin');
 endif;
 ?>

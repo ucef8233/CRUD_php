@@ -1,9 +1,19 @@
 <?php
 
+if (isset($_SESSION['user']['id'])) :
+  setcookie('utulisateur', $_SESSION['user']['id'], time() + 60 * 160 + 24);
+  $name = $_SESSION['user']['nom'];
+elseif (isset($_SESSION['id_google'])) :
+  setcookie('utulisateur', $_SESSION['id_google'], time() + 60 * 160 + 24);
+  $name = $_SESSION['name'];
+endif;
 
-if ($_SESSION['user']['password']) :
+
+
+
+if (isset($_SESSION['user']['password']) || isset($_SESSION['id_google'])) :
   $title = "profil User";
-// $session = $_SESSION['user']['nom'];
+  echo $name;
 else :
-  header('location: user.php?p=login');
+  header('location: login.php?p=loginuser');
 endif;

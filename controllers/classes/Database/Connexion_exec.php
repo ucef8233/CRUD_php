@@ -10,21 +10,16 @@ class Connexion_exec
       $email = $_POST['email'];
       $connexion = new Connexion;
       $result = $connexion->Cnx($table_name, $email);
-      $password_post = $_POST['password'];
-      $password_hash = $result['password'];
-      if ($result && password_verify($password_post, $password_hash)) :
-        if ($table_name == 'utulisateurs') :
-          header("Location: utulisateurs.php?p=home");
-          exit();
-          return $result;
-        elseif ($table_name == 'user') :
-          header("Location: user.php?p=home");
-          exit();
-          return $result;
+      if ($result) :
+        $password_post = $_POST['password'];
+        $password_hash = $result['password'];
+        var_dump(password_verify($password_post, $password_hash));
+        if (password_verify($password_post, $password_hash)) :
+          header("Location: $table_name.php?p=home");
+        // else :
+        //   header("Location: login.php?p=$table_name&erreur=ko");
+        //   exit();
         endif;
-      else :
-        header("Location: $table_name.php?p=login&erreur=ko");
-        exit();
       endif;
     endif;
   }

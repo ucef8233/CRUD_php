@@ -38,10 +38,10 @@ class Utulisateur extends Db
     endforeach;
     $stmtExec = $stmt->execute();
     if ($stmtExec) :
-      if ($table_name == 'utulisateurs') :
-        header('Location:utulisateurs.php?p=home');
+      if ($table_name == 'admin') :
+        header('Location:admin.php?p=home');
       elseif ($table_name == 'user') :
-        header('Location:user.php?p=login');
+        header('Location:login.php');
       endif;
     endif;
   }
@@ -54,7 +54,7 @@ class Utulisateur extends Db
    */
   public function selectOne($id)
   {
-    $sql = "SELECT * FROM utulisateurs WHERE id = :id";
+    $sql = "SELECT * FROM admin WHERE id = :id";
     $stmt = $this->connect()->prepare($sql);
     $stmt->bindValue(":id", $id);
     $stmt->execute();
@@ -69,14 +69,14 @@ class Utulisateur extends Db
    */
   public function update($champs, $id)
   {
-    $sql = ("UPDATE utulisateurs SET nom = :nom, mail = :mail, adress = :adress WHERE id = $id");
+    $sql = ("UPDATE admin SET nom = :nom, mail = :mail, adress = :adress WHERE id = $id");
     $stmt = $this->connect()->prepare($sql);
     foreach ($champs as $key => $value) :
       $stmt->bindValue(':' . $key, $value);
     endforeach;
     $stmtExec = $stmt->execute();
     if ($stmtExec) :
-      header('Location:utulisateurs.php?p=home');
+      header('Location:admin.php?p=home');
     endif;
   }
   /**
@@ -84,7 +84,7 @@ class Utulisateur extends Db
    */
   public function delet($id)
   {
-    $sql = "DELETE FROM utulisateurs WHERE id = :id";
+    $sql = "DELETE FROM admin WHERE id = :id";
     $stmt = $this->connect()->prepare($sql);
     $stmt->bindValue(':id', $id);
     $stmtExec = $stmt->execute();

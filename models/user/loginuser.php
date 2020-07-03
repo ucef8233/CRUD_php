@@ -1,25 +1,22 @@
 <?php
 
 
-/////   add session pour deconexion si precedent 
-
-
 use \projet\classes\HTML\Form;
 use \projet\classes\HTML\Error;
 use \projet\Config;
 
 
 $access = null;
+
 if (!empty($_COOKIE['utulisateur'])) :
   $access = $_COOKIE['utulisateur'];
 endif;
-
 if ($access) :
-  header('location: utulisateurs.php?p=home');
+  header('location: user.php');
 else :
   $configuration = new Config;
   $gClient = $configuration->configGoogle();
-  $title = 'Connexion utulisateur';
+  $title = "connexion User";
 
 ?>
 <form action="" method="POST">
@@ -29,8 +26,9 @@ else :
       echo  Form::getForm($a, $b, $c);
     endforeach;
     ?>
-  <?= Form::getInput('submit', 'submit', 'Ce connecter  ') ?>
-  <a class="btn btn-danger" href="<?= $gClient->createAuthUrl() ?>"> Google + </a>
+  <?= Form::getInput('submit', 'submit', 'submit') ?>
 </form>
+<a class="btn btn-danger float-right mx-5" href="<?= $gClient->createAuthUrl() ?>"> Google + </a>
+<a class="btn btn-success float-right" href="login.php?p=inscription">S'inscrire</a>
 <?php
 endif;

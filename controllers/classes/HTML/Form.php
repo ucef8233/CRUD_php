@@ -9,14 +9,14 @@ class Form extends Functions
 
   public static function getForm($contenu, $name, $type, $value = '')
   {
-    return '<div class="form-group">
-    <label for="email">' . $contenu . '</label>
+    return ' <div class="input-field col s12">
+    <label for="' . $name . '">' . $contenu . '</label>
     <input value="' . $value . '" type="' . $type . '" name="' . $name . '" class="form-control" placeholder="Entrer le ' . $contenu . '"  required>
   </div>';
   }
   public static function getInput($name, $type, $value = '')
   {
-    return '<input value="' . $value . '" type="' . $type . '" name="' . $name . '" class="btn btn-primary">
+    return ' <div class="col s12 my-5 right-align m-t-sm"><input value="' . $value . '" type="' . $type . '" name="' . $name . '" class="btn btn-primary"></div>
     ';
   }
   public static function editForm()

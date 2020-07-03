@@ -1,9 +1,13 @@
 <?php
-$title = "connexion User";
+
+
+/////   add session pour deconexion si precedent 
+
 
 use \projet\classes\HTML\Form;
 use \projet\classes\HTML\Error;
 
+$title = "connexion admin";
 ?>
 <form action="" method="POST">
   <?= Error::error_cnx(); ?>
@@ -12,6 +16,6 @@ use \projet\classes\HTML\Error;
     echo  Form::getForm($a, $b, $c);
   endforeach;
   ?>
-  <?= Form::getInput('submit', 'submit', 'Ce connecter  ') ?>
-  <a href="user.php?p=inscription">S'inscrire</a>
+  <?= Form::getInput('submit', 'submit', 'submit') ?>
 </form>
+<?php

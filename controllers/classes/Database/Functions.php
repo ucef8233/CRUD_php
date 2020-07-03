@@ -40,7 +40,7 @@ class Functions
     $id = new Utulisateur;
     $userId = $id->getId();
     if (!$userId) :
-      header('location:utulisateurs.php?p=404');
+      header('location:admin.php?p=404');
     endif;
     $utulisateurs = new Utulisateur;
     $result = $utulisateurs->selectOne($userId);

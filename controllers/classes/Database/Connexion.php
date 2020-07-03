@@ -2,7 +2,7 @@
 
 namespace projet\classes\Database;
 
-// session_start();
+session_start();
 
 use \PDO;
 

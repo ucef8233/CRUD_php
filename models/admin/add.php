@@ -4,7 +4,7 @@
 use \projet\classes\HTML\Form;
 
 // session_start();
-if (isset($_SESSION['utulisateurs']['id']) || isset($_SESSION['id_google'])) :
+if (isset($_SESSION['admin']['id']) || isset($_SESSION['id_google'])) :
   $title = 'ajouter un utilisateur';
   // $name = $_SESSION['utulisateurs']['nom'];
 ?>
@@ -18,6 +18,6 @@ if (isset($_SESSION['utulisateurs']['id']) || isset($_SESSION['id_google'])) :
 </form>
 <?php
 else :
-  header('location: utulisateurs.php?p=login');
+ header('location: admin.php?p=loginadmin');
 endif;
 ?>
