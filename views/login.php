@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 
 use \projet\classes\Database\Functions;
 use \projet\classes\Database\Connexion_exec;
@@ -14,16 +14,16 @@ else :
 endif;
 ob_start();
 if ($p === 'loginadmin') :
-  Connexion_exec::Cnx('admin');
+  Connexion_exec::Cnx('admin', 'loginadmin');
   require '../models/admin/loginadmin.php';
 elseif ($p === 'loginuser') :
-  Connexion_exec::Cnx('user');
+  Connexion_exec::Cnx('user', 'loginuser');
   require '../models/user/loginuser.php';
 elseif ($p === 'inscription') :
   Functions::submit('user');
   require '../models/user/inscription.php';
-else :
-  require '../models/user/404.php';
+// else :
+//   require '../models/user/404.php';
 endif;
 $login = ob_get_clean();
 require '../models/template/login.php';

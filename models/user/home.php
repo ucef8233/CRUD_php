@@ -7,10 +7,6 @@ elseif (isset($_SESSION['id_google'])) :
   setcookie('utulisateur', $_SESSION['id_google'], time() + 60 * 160 + 24);
   $name = $_SESSION['name'];
 endif;
-
-
-
-
 if (isset($_SESSION['user']['password']) || isset($_SESSION['id_google'])) :
   $title = "profil User";
   echo $name;

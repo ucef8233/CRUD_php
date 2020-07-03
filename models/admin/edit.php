@@ -6,9 +6,10 @@ use \projet\classes\Database\Functions;
 
 // session_start();
 
-if (!isset($_SESSION['admin']['id']) || !isset($_SESSION['id_google'])) :
+if (isset($_SESSION['admin']['id'])) :
   $title = 'Modiffier l\'utilisateur';
-  $result = Functions::edit();
+  $result = Functions::edit('societe');
+
 
 ?>
 <!-- Modiffier des employer  -->
@@ -23,7 +24,7 @@ if (!isset($_SESSION['admin']['id']) || !isset($_SESSION['id_google'])) :
 </form>
 <?php
 else :
-  header('location: admin.php?p=loginadmin');
+  header('location: login.php?p=loginadmin');
 endif;
 ?>
 <!-- fin d'ajout des employées  -->

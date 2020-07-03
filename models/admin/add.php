@@ -1,14 +1,16 @@
 <?php
 
+use \projet\classes\HTML\Error;
 
 use \projet\classes\HTML\Form;
 
 // session_start();
 if (isset($_SESSION['admin']['id']) || isset($_SESSION['id_google'])) :
   $title = 'ajouter un utilisateur';
-  // $name = $_SESSION['utulisateurs']['nom'];
+
 ?>
 <form action="" method="POST">
+  <?= Error::error_exist(); ?>
   <?php
     foreach (Form::addForm() as list($a, $b, $c)) :
       echo  Form::getForm($a, $b, $c);
@@ -18,6 +20,6 @@ if (isset($_SESSION['admin']['id']) || isset($_SESSION['id_google'])) :
 </form>
 <?php
 else :
- header('location: admin.php?p=loginadmin');
+  header('location: admin.php?p=loginadmin');
 endif;
 ?>

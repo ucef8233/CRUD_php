@@ -22,9 +22,9 @@ class Form extends Functions
   public static function editForm()
   {
     $form = [
-      ['Nom', 'nom', 'text', self::edit()['nom']],
-      ['Mail', 'email', 'email', self::edit()['mail']],
-      ['Adress', 'adress', 'text', self::edit()['adress']]
+      ['Nom', 'nom', 'text', self::edit('societe')['nom']],
+      ['Mail', 'email', 'email', self::edit('societe')['mail']],
+      ['Adress', 'adress', 'text', self::edit('societe')['adress']]
     ];
     return $form;
   }

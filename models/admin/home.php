@@ -5,6 +5,7 @@ use projet\classes\Database\Utulisateur;
 
 if (isset($_SESSION['admin']['id'])) :
   $title = 'Liste des utulisateurs';
+  // var_dump($_SESSION);
 ?>
 
 <!-- liste des employée -->
@@ -16,14 +17,14 @@ if (isset($_SESSION['admin']['id'])) :
       <th scope="col">nom</th>
       <th scope="col">adress</th>
       <th scope="col">mail</th>
-      <th scope="col">date d'inscription</th>
+
       <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
     <?php
       $utulisateurs = new Utulisateur;
-      $rows =  $utulisateurs->select('admin');
+      $rows =  $utulisateurs->select('societe');
       if ($rows) :
         foreach ($rows as $index => $row) :
       ?>
@@ -33,7 +34,6 @@ if (isset($_SESSION['admin']['id'])) :
       <td><?= $row['nom'] ?></td>
       <td><?= $row['adress'] ?></td>
       <td><?= $row['mail'] ?></td>
-      <td><?= $row['date_integration'] ?></td>
       <td><a class="btn btn-sm btn-primary" href="admin.php?p=edit&id=<?= $row['id'] ?>"> <i
             class="fas fa-user-edit "></i> Edit</a> &nbsp;
         <a class="btn btn-sm btn-danger" href="admin.php?p=home&del=<?= $row['id'] ?> "><i

@@ -3,7 +3,7 @@ session_start();
 // require '../classes/Autoloader.php';
 use \projet\classes\Database\Functions;
 use \projet\classes\Database\Connexion_exec;
-
+use projet\classes\Database\Utulisateur;
 
 // function autoload classes //
 require '../controllers/Autoloader.php';
@@ -19,7 +19,7 @@ endif;
 
 ob_start();
 if ($p === 'add') :
-  Functions::submit('admin');
+  Functions::submit('societe');
   require '../models/admin/add.php';
 elseif ($p === 'home') :
   Functions::delet();
@@ -27,10 +27,10 @@ elseif ($p === 'home') :
 elseif ($p === 'logout') :
   require '../models/admin/logout.php';
 elseif ($p === 'edit') :
-  Functions::edit();
+  Functions::edit('societe');
   require '../models/admin/edit.php';
 else :
-  require '../models/template/404.php';
+  require '../models/admin/404.php';
 endif;
 $contente = ob_get_clean();
 require '../models/template/admin.php';

@@ -12,4 +12,12 @@ class Error
       endif;
     endif;
   }
+  public static function error_exist()
+  {
+    if (isset($_GET['p']) && isset($_GET['error'])) :
+      if ($_GET['error'] == 'exist') :
+        return ' <p class="bg-danger p-3 text-center mx-auto w-50">mail deja existant</p>';
+      endif;
+    endif;
+  }
 }

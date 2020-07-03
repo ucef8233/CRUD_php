@@ -1,6 +1,7 @@
 <?php
 
 use \projet\classes\HTML\Form;
+use \projet\classes\HTML\Error;
 
 $access = null;
 
@@ -14,6 +15,7 @@ else :
 
 ?>
 <form action="" method="POST">
+  <?= Error::error_exist(); ?>
   <?php
     foreach (Form::addForm() as list($a, $b, $c)) :
       echo  Form::getForm($a, $b, $c);

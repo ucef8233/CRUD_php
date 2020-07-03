@@ -18,7 +18,6 @@ endif;
 ob_start();
 if ($p === 'home') :
   require '../models/user/home.php';
-
 elseif ($p === 'logout') :
   require '../models/user/logout.php';
 elseif ($p === 'callback') :

@@ -38,7 +38,7 @@ class Utulisateur extends Db
     endforeach;
     $stmtExec = $stmt->execute();
     if ($stmtExec) :
-      if ($table_name == 'admin') :
+      if ($table_name == 'societe') :
         header('Location:admin.php?p=home');
       elseif ($table_name == 'user') :
         header('Location:login.php');
@@ -52,13 +52,14 @@ class Utulisateur extends Db
    * 
    * @return [array] $result tableau des information de l'utulisateur liée a la variable $id
    */
-  public function selectOne($id)
+  public function selectOne($id, $table_name, $type)
   {
-    $sql = "SELECT * FROM admin WHERE id = :id";
+    $sql = "SELECT * FROM $table_name WHERE $type = :id";
     $stmt = $this->connect()->prepare($sql);
     $stmt->bindValue(":id", $id);
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $_SESSION[$table_name] = $result;
     return $result;
   }
 
@@ -69,7 +70,7 @@ class Utulisateur extends Db
    */
   public function update($champs, $id)
   {
-    $sql = ("UPDATE admin SET nom = :nom, mail = :mail, adress = :adress WHERE id = $id");
+    $sql = ("UPDATE societe SET nom = :nom, mail = :mail, adress = :adress WHERE id = $id");
     $stmt = $this->connect()->prepare($sql);
     foreach ($champs as $key => $value) :
       $stmt->bindValue(':' . $key, $value);
@@ -84,7 +85,7 @@ class Utulisateur extends Db
    */
   public function delet($id)
   {
-    $sql = "DELETE FROM admin WHERE id = :id";
+    $sql = "DELETE FROM societe WHERE id = :id";
     $stmt = $this->connect()->prepare($sql);
     $stmt->bindValue(':id', $id);
     $stmtExec = $stmt->execute();
